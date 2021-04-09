@@ -1,2 +1,2 @@
-# BattleShips
+# BattleShip
 simple battle ships game
