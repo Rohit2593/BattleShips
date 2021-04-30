@@ -1,9 +1,11 @@
 '''                                         INSTRUCTIONS 
-        The user will have to enter the row and coloumn number in the range (0,5) both included.
-        A  6 x 6 board will be printed in which :
+        The user will have to enter the grid size (n) and the ship size (s) and the ship will be placed horizontally or vertically at any random position.
+        A  n x n board will be printed in which :
         - the places with 'O' represent the coordinates that are untouched.
         - the places with '-' represent the coordinates given by the user that were unsuccessful.
-        - the places with 'X' represent the coordinates given by the user that were successful  '''
+        - the places with 'X' represent the coordinates given by the user that were successful  
+           The user will have to enter the desired coordinate after which that coordinate will be represented in one of the three ways above mentioned.
+           '''
 import random
 
 n = int(input('Enter the grid size (min = 5, max = 10) : '))
