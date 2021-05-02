@@ -68,7 +68,7 @@ while chance_count <= n**2:
     
     # if the entered coordinates are out of board.    
     if row<0 or row > n-1 or coloumn<0 or coloumn>n-1 :
-        print('Enter a valid coordinate inside the range 0 - 5 . ') 
+        print('Enter a valid coordinate inside the range 0 - {} . '.format(n-1) 
     
     # if the entered coordinate is in the ship coordinates.
     elif (row,coloumn) in ship_coordinates:
