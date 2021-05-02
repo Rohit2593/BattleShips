@@ -6,6 +6,9 @@
         - the places with 'X' represent the coordinates given by the user that were successful  
            The user will have to enter the desired coordinate after which that coordinate will be represented in one of the three ways above mentioned.
            '''
+# doc string that will print the instructions.
+print(__doc__)
+
 import random
 
 n = int(input('Enter the grid size (min = 5, max = 10) : '))
@@ -57,31 +60,37 @@ elif ship_orientation == 2 :
 
 # main code
 while chance_count <= n**2:
-    
+    # printing the board at the start of every chance.
     grid_board(board)
     row = int(input('enter the row number (0 - {} ) : '.format(n-1)))
     coloumn = int(input('enter the coloumn number (0 - {} ) : '.format(n-1)))
     print()
-
+    
+    # if the entered coordinates are out of board.    
     if row<0 or row > n-1 or coloumn<0 or coloumn>n-1 :
         print('Enter a valid coordinate inside the range 0 - 5 . ') 
-
+    
+    # if the entered coordinate is in the ship coordinates.
     elif (row,coloumn) in ship_coordinates:
-        board[row][coloumn] = 'X'
-        chance_count += 1
-        hit_count+= 1 
-        if hit_count == s:
-            grid_board(board)
-            print('You win!')
-            print('You took',chance_count,'chances.')
-            break
+        if board[row][coloumn] == 'X':
+            print('you have already entered this coordinate, enter another one')
         else:
-            continue 
-        
+            board[row][coloumn] = 'X'
+            chance_count += 1
+            hit_count+= 1 
+            if hit_count == s:
+                grid_board(board)
+                print('You win!')
+                print('You took',chance_count,'chances.')
+                break
+            else:
+                continue 
+    
+    # if the entered coordinates are valid but not in ship coordinates.  
     elif (row,coloumn) not in ship_coordinates:
         if board[row][coloumn] =='-':
             print('You have already entered this coordinate, enter any other coordinate.') 
             print()   
         else :
             board[row][coloumn] = '-'
-            chance_count += 1 
+            chance_count += 1  
