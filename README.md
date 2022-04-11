@@ -1,2 +1,2 @@
-# BattleShip
-simple battle ship game
+# Battleship
+A simple battle ship game
